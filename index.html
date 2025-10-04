@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Шагай Web</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header, nav, footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      margin-right: 15px;
+      text-decoration: none;
+    }
+    .container {
+      padding: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1></h1>
+  </header>
+  <nav>
+    <a href="#" id="link-home">Нүүр</a>
+    <a href="#" id="link-about">Бидний тухай</a>
+    <a href="#" id="link-article">Шагай тоглгоом</a>
+  </nav>
+
+  <div class="container">
+    <!-- Home Page -->
+    <div id="page-home">
+      <h2>Тавтай морил!</h2>
+      <p>Энэ бол миний жижиг вэб сайт. Та “Шагай тоглох арга” тухай мэдээ уншихыг хүсвэл “Шагай Арга” хэсэг рүү орно уу.</p>
+    </div>
+
+    <!-- About Page -->
+    <div id="page-about" class="hidden">
+      <h2>Бидний тухай</h2>
+      <p>Бид шагай тоглоом, хүүхдийн уламжлалт тоглоомын талаар мэдээлэл түгээдэг сайт юм.</p>
+    </div>
+
+    <!-- Article Page -->
+    <div id="page-article" class="hidden">
+      <h2>Шагай тоглох 10 төрлийн арга</h2>
+      
+      <ul>
+        <li>Мэлхий өрөх</li>
+        <li>Дөрвөн бэрх</li>
+        <li>Морь уралдуулах</li>
+        <li>Шагай таалцах</li>
+        <li>Андгайцах шагайн наадгай</li>
+        <li>12 жил шагайн тоглоом</li>
+        <li>12 бэрх шагайн наадгай</li>
+        <li>9 шарга</li>
+        <li>Бөгцөг няслах / Шагай няслах</li>
+        <li>Шагай шүүрэх / Дүрс бүтээх</li>
+      </ul>
+      
+    </div>
+  </div>
+
+  <footer>
+    <p> Шагай Web</p>
+  </footer>
+
+  <script>
+    // Simple page switching logic
+    const pageHome = document.getElementById('page-home');
+    const pageAbout = document.getElementById('page-about');
+    const pageArticle = document.getElementById('page-article');
+
+    document.getElementById('link-home').addEventListener('click', (e) => {
+      e.preventDefault();
+      pageHome.classList.remove('hidden');
+      pageAbout.classList.add('hidden');
+      pageArticle.classList.add('hidden');
+    });
+    document.getElementById('link-about').addEventListener('click', (e) => {
+      e.preventDefault();
+      pageHome.classList.add('hidden');
+      pageAbout.classList.remove('hidden');
+      pageArticle.classList.add('hidden');
+    });
+    document.getElementById('link-article').addEventListener('click', (e) => {
+      e.preventDefault();
+      pageHome.classList.add('hidden');
+      pageAbout.classList.add('hidden');
+      pageArticle.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
